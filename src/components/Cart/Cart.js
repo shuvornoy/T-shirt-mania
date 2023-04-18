@@ -10,8 +10,8 @@ const Cart = ({ cart, handleRemoveItem }) => {
     }
     else if (cart.length === 1){
         message = <div>
-            <h3>Amar jonno ekta nao</h3>
-            <p>tomar nijer jonno ekta</p>
+            {/* <h3>Amar jonno ekta nao</h3>
+            <p>tomar nijer jonno ekta</p> */}
             <p><small>amar jonno arekta nao, Please</small></p>
         </div>
     } 
@@ -24,21 +24,21 @@ const Cart = ({ cart, handleRemoveItem }) => {
             <h3 className={cart.length ===2 ? `orange` : 'purple'}>Order Summary</h3>
             <h5 className={`bold ${cart.length ===2 ? 'blue':'yellow' }`}>Order quantity: {cart.length}</h5>
             {
-                cart.map(tshirt => <p
+                cart.map(tshirt => <p className='mt-2'
                     key={tshirt._id}
                 >
                     {tshirt.name}
-                    <button onClick={() => handleRemoveItem(tshirt)}>X</button>
+                    <button className='bg-red-200 text-red-600 w-4 ml-1 rounded' onClick={() => handleRemoveItem(tshirt)}>X</button>
                 </p>)
             }
             {
                 message
             }
-            {cart.length === 3 ? <p>Tin jon ke gift diba?</p> : <p>kino kino</p>}
+            {/* {cart.length === 3 ? <p>Tin jon ke gift diba?</p> : <p>kino kino</p>}
             <p>and operator</p>
             {cart.length === 2 && <h2>Double items</h2>}
             <p>OR Operator</p>
-            {cart.length === 4 || <p>Charta item na</p>}
+            {cart.length === 4 || <p>Charta item na</p>} */}
         </div>
     );
 };
